@@ -26,7 +26,8 @@ public class MenuActivity {
 		switch(selection) 
 		{
 		case 1:
-			Random randomNumber = new Random();
+			Random randomize = new Random();
+			int randomNumber = randomize.nextInt(100); 
 			System.out.println(randomNumber);
 			break; 
 		case 2: 
