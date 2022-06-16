@@ -20,6 +20,8 @@ public class MenuActivity {
 	
 	public static void menuMethod() 
 	{
+		boolean continueVariable = true; 
+		while(continueVariable) { 
 		System.out.println("Select 1 for Random Number, 2 for Name Reversal, or 3 for to Exit");
 		int selection = scan.nextInt();
 		
@@ -29,6 +31,7 @@ public class MenuActivity {
 			Random randomize = new Random();
 			int randomNumber = randomize.nextInt(100); 
 			System.out.println(randomNumber);
+			continueVariable = false; 
 			break; 
 		case 2: 
 			String reversedName = ""; 
@@ -40,16 +43,17 @@ public class MenuActivity {
 			}
 			
 			System.out.println("This is your name reversed: " + reversedName);
+			continueVariable = false;
 			break;
 		
 		case 3:
 			System.out.println("Your are leaving the program");
-			
+			continueVariable = false;
 			break;
 		
 		default:
-			System.out.println("Something went wrong"); 
-		
+			System.out.println("Invalid Input. Please Try Again");
+		}
 		}
 	scan.close();
 	}
