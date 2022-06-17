@@ -2,6 +2,8 @@ package com.revature;
 
 import java.util.Scanner;
 
+import com.revature.users.users;
+
 public class MenuDriver {
 
 	static Scanner userInput = new Scanner(System.in); 
@@ -9,6 +11,8 @@ public class MenuDriver {
 	public static void main(String[] args) {
 	
 		welcomeMenu(); 
+		
+		//users testUser = new users(1);
 
 	}
 	
@@ -31,7 +35,8 @@ public class MenuDriver {
 				runningVariable = false; 
 				break; 
 			case 3:
-				System.out.println("Welcome to your Account " + userName);
+				//System.out.println("Welcome to your Account " + userName);
+				returnName(userName); 
 				runningVariable = false; 
 				break; 
 			}
@@ -40,5 +45,13 @@ public class MenuDriver {
 		
 		userInput.close(); 
 		}
+	
+	public static String returnName(String name) {
+		
+		//System.out.println(name);
+		users userType = new users(name); 
+		
+		return null;
+	}
 
 }
