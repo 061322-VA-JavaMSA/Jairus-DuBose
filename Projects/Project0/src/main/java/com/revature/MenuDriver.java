@@ -2,7 +2,7 @@ package com.revature;
 
 import java.util.Scanner;
 
-import com.revature.users.users;
+import com.revature.users.Users;
 
 public class MenuDriver {
 
@@ -36,7 +36,9 @@ public class MenuDriver {
 				break; 
 			case 3:
 				//System.out.println("Welcome to your Account " + userName);
-				returnName(userName); 
+				System.out.println("Please enter your password: "); 
+				String userPassword = userInput.nextLine();
+				returnName(userName,userPassword); 
 				runningVariable = false; 
 				break; 
 			}
@@ -46,10 +48,10 @@ public class MenuDriver {
 		userInput.close(); 
 		}
 	
-	public static String returnName(String name) {
+	public static String returnName(String name, String password) {
 		
 		//System.out.println(name);
-		users userType = new users(name); 
+		Users userType = new Users(name,password);
 		
 		return null;
 	}
