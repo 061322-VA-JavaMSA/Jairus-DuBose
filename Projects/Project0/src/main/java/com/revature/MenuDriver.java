@@ -2,8 +2,6 @@ package com.revature;
 
 import java.util.Scanner;
 
-import com.revature.users.Users;
-
 public class MenuDriver {
 
 	static Scanner userInput = new Scanner(System.in); 

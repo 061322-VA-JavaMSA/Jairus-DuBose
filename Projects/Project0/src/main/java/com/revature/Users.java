@@ -1,6 +1,7 @@
-package com.revature.users;
+package com.revature;
 
 public class Users  implements UsersInterface {
+	
 	static String userType;
 	static String userPassword; 
 	static int userGold; 
