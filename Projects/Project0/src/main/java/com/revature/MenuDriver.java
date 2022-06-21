@@ -4,13 +4,13 @@ import java.util.Scanner;
 
 public class MenuDriver {
 
-	static Scanner userInput = new Scanner(System.in); 
+	static Scanner userInput = new Scanner(System.in);
+	static String userName; 
+	static String userPassword; 
 	
 	public static void main(String args[]) {
 	
 		welcomeMenu(); 
-		
-		//users testUser = new users(1);
 
 	}
 	
@@ -33,10 +33,7 @@ public class MenuDriver {
 				runningVariable = false; 
 				break; 
 			case 3:
-				//System.out.println("Welcome to your Account " + userName);
-				System.out.println("Please enter your password: "); 
-				String userPassword = userInput.nextLine();
-				returnName(userName,userPassword); 
+				System.out.println("Welcome to your Account " + userName);
 				runningVariable = false; 
 				break; 
 			}
@@ -46,12 +43,10 @@ public class MenuDriver {
 		userInput.close(); 
 		}
 	
-	public static String returnName(String name, String password) {
-		
-		//System.out.println(name);
-		Users userType = new Users(name,password);
-		
-		return null;
+	public static void returnName(String name, String password) {
+				
+		Users.AccountLogin(name, password);
+
 	}
 
 }

@@ -29,7 +29,7 @@ public class Users  implements UsersInterface {
 		if(userType.equals("Jairus") && userPassword.equals("JaiDuB75")){
 			System.out.println("Welcome " + userName + " You are a manager");
 		}
-		else if (userType.equals("John")) {
+		else if (userType.equals("John")&& userPassword.equals("person")) {
 			System.out.println("Welcome " + userName + " You are an employee");
 		}
 		else {
