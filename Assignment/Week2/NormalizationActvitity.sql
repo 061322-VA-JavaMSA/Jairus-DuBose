@@ -27,7 +27,7 @@ password varchar(30)
 */
 
 --Seperated the employeees Into their own table
-create empolyees(
+create empolyees if not exists(
 	EmolyeeId serial primary key,
 	SalesPersonFirstName Varchar(50),
 	SalesPersonLastName Varchar(50),
@@ -35,7 +35,7 @@ create empolyees(
 );
 
 --Seperated the customers into their own table
-create customers(
+create customers if not exists(
 	CustomerID serial primary key,
 	CustomerFirstName Varchar(50),
 	CustomerLastName Varchar(50),
@@ -44,6 +44,7 @@ create customers(
 
 --In this table I put the Sales Office location because both the 
 --employee and customer can/probaby in the same building
-create employee_customer(
+create employee_customer if not exists(
+	employee_customer_id serial primary, 
 	SalesOfficeLocation INTEGER
 );
