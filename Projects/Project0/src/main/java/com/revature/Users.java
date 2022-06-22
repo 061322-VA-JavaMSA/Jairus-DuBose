@@ -10,32 +10,43 @@ public class Users  implements UsersInterface {
 	static String userPassword; 
 	static int userGold; 
 	
-	public Users(String userType, String userPassword) 
+	public Users() 
 	{
 		System.out.println("Please Enter Your Name/Username: "); 
 		String userName = userInput.nextLine();
-		//Users.userName = userType;
+		
 		
 		System.out.println("Please Enter Your Password: ");
-		String userPassword1 = userInput.nextLine();
-		//Users.userPassword = userPassword; 
+		String userPassword = userInput.nextLine();
+		 
 		
-		AccountLogin(userType, userPassword1); 
-		//System.out.println("This worked " + userType);
+		NewUserLogin(userName, userPassword);  
+		
 	}
 	
-	public static void AccountLogin(String userType, String userPassword) {
+	public static void AccountLogin() {
 		
-		if(userType.equals("Jairus") && userPassword.equals("JaiDuB75")){
+		System.out.println("Please enter your username: ");
+		String userName = userInput.nextLine();
+		
+		System.out.println("Please enter your password: ");
+		String userPassword = userInput.nextLine(); 
+		
+		if(userName.equals("Jairus") && userPassword.equals("JaiDuB75")){
 			System.out.println("Welcome " + userName + " You are a manager");
 		}
-		else if (userType.equals("John")&& userPassword.equals("person")) {
+		else if (userName.equals("John")&& userPassword.equals("person")) {
 			System.out.println("Welcome " + userName + " You are an employee");
 		}
 		else {
-			System.out.println("Welcome " + userName + " You are customer"); 
+			System.out.println("We could not find your account please try again"); 
 		}
 		
+	}
+	
+	public void NewUserLogin(String userName, String userPassword) {
+		
+		System.out.println("Welcome " + userName + " You are a customer");
 	}
 
 	public void userName() {

@@ -19,21 +19,22 @@ public class MenuDriver {
 		boolean runningVariable = true; 
 		
 		do {
-			System.out.println("Welcome to the shop \nPlease Enter your Name: ");
-			String userName = userInput.nextLine();
-			System.out.println("Welcome " + userName + "\nWould you like to 1: Shop, 2: Register, or 3: View Account");
+			System.out.println("Welcome to the shop\n");
+			System.out.println("Would you like to 1: Shop, 2: Register, or 3: View Account");
 			int userSelection = userInput.nextInt();
 			switch(userSelection) {
 			case 1:
-				System.out.println("Welcome to the Store " + userName);
+				System.out.println("Welcome to the Store ");
 				runningVariable = false; 
 				break;
 			case 2:
-				System.out.println("Welcome to Account Registeration " + userName);
+				System.out.println("Welcome to Account Registeration ");
+				newUser(); 
 				runningVariable = false; 
 				break; 
 			case 3:
-				System.out.println("Welcome to your Account " + userName);
+				System.out.println("Welcome to your Account Login");
+				Users.AccountLogin();
 				runningVariable = false; 
 				break; 
 			}
@@ -43,10 +44,10 @@ public class MenuDriver {
 		userInput.close(); 
 		}
 	
-	public static void returnName(String name, String password) {
-				
-		Users.AccountLogin(name, password);
-
+	
+	public static void newUser() {
+		
+		Users newUser = new Users();
 	}
 
 }
