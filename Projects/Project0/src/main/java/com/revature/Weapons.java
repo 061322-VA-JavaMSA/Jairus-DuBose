@@ -1,5 +1,7 @@
 package com.revature;
 
+
+
 public class Weapons implements WeaponsInterface{
 
 	public static void main(String[] args) {

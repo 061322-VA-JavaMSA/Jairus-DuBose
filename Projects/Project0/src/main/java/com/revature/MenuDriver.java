@@ -25,6 +25,7 @@ public class MenuDriver {
 			switch(userSelection) {
 			case 1:
 				System.out.println("Welcome to the Store ");
+				StoreDriver.OpeningStore(); 
 				runningVariable = false; 
 				break;
 			case 2:
@@ -45,6 +46,7 @@ public class MenuDriver {
 		}
 	
 	
+
 	public static void newUser() {
 		
 		Users newUser = new Users();
