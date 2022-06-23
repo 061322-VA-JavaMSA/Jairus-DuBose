@@ -12,7 +12,7 @@ public class Potions implements PotionsInterface{
 		
 	}
 
-	public void PotionType() {
+	public void PotionValue() {
 		// TODO Auto-generated method stub
 		
 	}

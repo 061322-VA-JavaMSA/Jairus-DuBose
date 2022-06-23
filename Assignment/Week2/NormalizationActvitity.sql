@@ -27,7 +27,7 @@ password varchar(30)
 */
 
 --Seperated the employeees Into their own table
-create empolyees if not exists(
+/*create empolyees if not exists(
 	EmolyeeId serial primary key,
 	SalesPersonFirstName Varchar(50),
 	SalesPersonLastName Varchar(50),
@@ -47,4 +47,7 @@ create customers if not exists(
 create employee_customer if not exists(
 	employee_customer_id serial primary, 
 	SalesOfficeLocation INTEGER
-);
+);*/
+
+insert into users (username, password) values('kev','pass');
+

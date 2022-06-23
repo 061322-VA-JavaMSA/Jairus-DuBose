@@ -15,7 +15,7 @@ public class Weapons implements WeaponsInterface{
 		
 	}
 
-	public void WeaponType() {
+	public void WeaponValue() {
 		// TODO Auto-generated method stub
 		
 	}

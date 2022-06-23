@@ -12,9 +12,10 @@ public class Armours implements ArmoursInterface{
 		
 	}
 
-	public void ArmourType() {
+	public void ArmourValue() {
 		// TODO Auto-generated method stub
 		
 	}
+
 
 }

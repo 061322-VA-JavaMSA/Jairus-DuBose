@@ -3,6 +3,6 @@ package com.revature;
 public interface ArmoursInterface {
 	
 	public void ArmourName();
-	public void ArmourType(); 
+	public void ArmourValue(); 
 
 }
