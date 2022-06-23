@@ -84,10 +84,36 @@ insert into potions (potion_name, potion_price, potion_quantity) values ('Acid R
 insert into potions (potion_name, potion_price, potion_quantity) values ('Fire Resistance', 150, 10);
 insert into potions (potion_name, potion_price, potion_quantity) values ('Cold Resistance', 200, 10);
 
+--Testing Select Statements
 
+select users.username from users where users.usertype = 'manager'; 
+select users.username from users where users.usertype = 'employee'; 
 
+select users.username from users where users.usertype = 'customer'; 
+select users.username from users where users.username = 'fraoul1'; 
 
+select weapons.weapon_name from weapons where weapons.weapon_name = 'Dagger'; 
+select weapons.weapon_name from weapons where weapons.weapon_name = 'Shortsword'; 
+select weapons.weapon_name from weapons where weapons.weapon_name = 'Longsword'; 
 
+select armours.armour_name from armours where armours.armour_name = 'Leather'; 
+select armours.armour_name from armours where armours.armour_name = 'Plate'; 
+select armours.armour_name from armours where armours.armour_name = 'Shield'; 
 
+select potions.potion_name from potions where potions.potion_name = 'Healing'; 
+select potions.potion_name from potions where potions.potion_name = 'Fire Resistance'; 
+select potions.potion_name from potions where potions.potion_name = 'Cold Resistance'; 
+
+select weapons.weapon_name, weapons.weapon_price from weapons where weapons.weapon_name = 'Dagger';  
+select weapons.weapon_name, weapons.weapon_price from weapons where weapons.weapon_name = 'Shortsword';  
+select weapons.weapon_name, weapons.weapon_price from weapons where weapons.weapon_name = 'Longsword';  
+
+select armours.armour_name, armours.armour_price from armours where armours.armour_name = 'Leather';  
+select armours.armour_name, armours.armour_price from armours where armours.armour_name = 'Plate';  
+select armours.armour_name, armours.armour_price from armours where armours.armour_name = 'Shield';  
+
+select potions.potion_name, potions.potion_price from potions where potions.potion_name = 'Healing';  
+select potions.potion_name, potions.potion_price from potions where potions.potion_name = 'Fire Resistance';  
+select potions.potion_name, potions.potion_price from potions where potions.potion_name = 'Cold Resistance';  
 
 
