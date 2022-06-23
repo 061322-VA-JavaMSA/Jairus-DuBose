@@ -14,8 +14,8 @@ public class Driver {
 	public static void main(String[] args) {
 		
 		String url = "jdbc:postgresql://default.c4f146kcs3yu.us-east-1.rds.amazonaws.com:5432/postgres";
-		String username = "postgres";
-		String password = "elephant";
+		String username = "";
+		String password = "";
 		
 		try {
 			Connection c = DriverManager.getConnection(url,username,password);
