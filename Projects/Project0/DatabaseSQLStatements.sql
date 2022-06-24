@@ -116,4 +116,4 @@ select potions.potion_name, potions.potion_price from potions where potions.poti
 select potions.potion_name, potions.potion_price from potions where potions.potion_name = 'Fire Resistance';  
 select potions.potion_name, potions.potion_price from potions where potions.potion_name = 'Cold Resistance';  
 
-select * from users where users.id = 1; 
+select * from users where users.id = 2; 

@@ -17,7 +17,7 @@ public class Users  implements UsersInterface {
 	
 	public Users() 
 	{
-		super(); 
+		//super(); 
 		//System.out.println("Please Enter Your Name/Username: "); 
 		//String userName = userInput.nextLine();
 		
