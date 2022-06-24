@@ -1,6 +1,7 @@
 package com.revature;
 
 import java.util.Scanner;
+import com.revature.database.*;
 
 public class Users  implements UsersInterface {
 	
@@ -17,36 +18,12 @@ public class Users  implements UsersInterface {
 	
 	public Users() 
 	{
-		//super(); 
-		//System.out.println("Please Enter Your Name/Username: "); 
-		//String userName = userInput.nextLine();
-		
-		
-		//System.out.println("Please Enter Your Password: ");
-		//String userPassword = userInput.nextLine();
-		 
-		
-		//NewUserLogin(userName, userPassword);  
 		
 	}
 	
 	public static void AccountLogin() {
 		
-		System.out.println("Please enter your username: ");
-		String userName = userInput.nextLine();
-		
-		System.out.println("Please enter your password: ");
-		String userPassword = userInput.nextLine(); 
-		
-		if(userName.equals("Jairus") && userPassword.equals("JaiDuB75")){
-			System.out.println("Welcome " + userName + " You are a manager");
-		}
-		else if (userName.equals("John")&& userPassword.equals("person")) {
-			System.out.println("Welcome " + userName + " You are an employee");
-		}
-		else {
-			System.out.println("We could not find your account please try again"); 
-		}
+		DatabaseConnection.RetrieveUserInfo();
 		
 	}
 	

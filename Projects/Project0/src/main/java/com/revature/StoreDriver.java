@@ -1,6 +1,7 @@
 package com.revature;
 
 import java.util.Scanner;
+import com.revature.database.*;
 
 public class StoreDriver {
 
@@ -15,12 +16,15 @@ public class StoreDriver {
 		
 		case 1:
 			System.out.println("Welcome to Weapons");
+			DatabaseConnection.RetrieveWeaponInfo();
 			break;
 		case 2:
 			System.out.println("Welcome to Armours");
+			DatabaseConnection.RetrieveArmourInfo();
 			break; 
 		case 3:
 			System.out.println("Welcome to Potions");
+			DatabaseConnection.RetrievePotionInfo();
 			break;
 		default:
 			System.out.println("Invalid Input Please Try Again");

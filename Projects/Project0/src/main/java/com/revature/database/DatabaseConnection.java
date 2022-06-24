@@ -13,62 +13,50 @@ import com.revature.Armours;
 
 public class DatabaseConnection {
 
-	public static void main(String[] args) {
+	static Users userInfo;
+	static Users userInfo2; 
+	static Weapons weaponInfo;
+	static Armours armourInfo;
+	static Potions potionInfo;
+	
+	static String url = "jdbc:postgresql://default.c4f146kcs3yu.us-east-1.rds.amazonaws.com:5432/postgres";
+	static String username = "";
+	static String password = ""; 
+	
+	public static void testMethod() {
 		
-		String url = "jdbc:postgresql://default.c4f146kcs3yu.us-east-1.rds.amazonaws.com:5432/postgres";
-		String username = "";
-		String password = ""; 
-		
-		/*
-		 * Scanner scan = new Scanner(System.in); int input =
-		 * Integer.parseInt(scan.nextLine());
-		 */
-		Users userInfo;
-		Users userInfo2; 
-		Weapons weaponInfo;
-		Armours armourInfo;
-		Potions potionInfo;
 		
 		try {
 			
 			Connection databaseConnection = DriverManager.getConnection(url, username, password);
-			//System.out.println(databaseConnection.getMetaData().getDriverName());
+
 			System.out.println("A connection was established");
 			
-			System.out.println("Please Enter The ID You Want To Look Up");
-			Scanner scan = new Scanner(System.in);
-			int Userinput = Integer.parseInt(scan.nextLine());
 			
-			String sql = "select * from users where users.id =" + Userinput + ";";
-			//establishes connection
-			//Connection databaseConnection1 = DriverManager.getConnection(url,username,password);
-			//Sets/Creates the sql statement
-			Statement sqlStatement = databaseConnection.createStatement();
-			//Executes the sql query 
-			ResultSet resultOutput = sqlStatement.executeQuery(sql);
+			databaseConnection.close();
 			
-			while(resultOutput.next()) {
-				userInfo = new Users();
-				userInfo.setId(resultOutput.getInt("id"));
-				userInfo.setUsername(resultOutput.getString("username"));
-				userInfo.setPassword(resultOutput.getString("password"));
-				userInfo.setUsertype(resultOutput.getString("usertype"));
-				
-				
-				
-				System.out.println(userInfo);
-			}
+		}catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("There was an error connecting to the database");
+			e.printStackTrace();
+		}
+		
+		
+		
+	}
+	
+	public static void RetrieveUserInfo() {
+		try {
+			Connection databaseConnection = DriverManager.getConnection(url, username, password);
 			
 			System.out.println("Please Enter The Username You Want To Look Up");
 			Scanner usernameScan = new Scanner(System.in);
 			String Userinput2 = usernameScan.nextLine();
 			
 			String usernamesql = "select * from users where users.username = '"+ Userinput2+"';";
-			//establishes connection
-			//Connection databaseConnection1 = DriverManager.getConnection(url,username,password);
-			//Sets/Creates the sql statement
+			
 			Statement usernamesqlStatement = databaseConnection.createStatement();
-			//Executes the sql query 
+ 
 			ResultSet usernameResultOutput = usernamesqlStatement.executeQuery(usernamesql);
 			
 			while(usernameResultOutput.next()) {
@@ -83,13 +71,27 @@ public class DatabaseConnection {
 				System.out.println(userInfo2);
 			}
 			
+			databaseConnection.close();
+			
+		}catch(SQLException e) {
+			System.out.println("There was an error connecting to User Info");
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static void RetrieveWeaponInfo() {
+		
+		try{
+			
+			Connection databaseConnection = DriverManager.getConnection(url, username, password);
+			
 			System.out.println("Please Enter The Weapon You Want To Look Up");
 			Scanner weaponScan = new Scanner(System.in);
 			String weaponInput = (weaponScan.nextLine());
 			String weaponsql = "select * from weapons where weapons.weapon_name = '" + weaponInput + "';";
 			Statement weaponsqlStatement = databaseConnection.createStatement();
-			//Executes the sql query 
-			ResultSet weaponresultOutput = sqlStatement.executeQuery(weaponsql);
+			ResultSet weaponresultOutput = weaponsqlStatement.executeQuery(weaponsql);
 			
 			while(weaponresultOutput.next()) {
 				weaponInfo = new Weapons();
@@ -103,13 +105,28 @@ public class DatabaseConnection {
 				System.out.println(weaponInfo);
 			}
 			
+			databaseConnection.close();
+			
+		}catch(SQLException e) {
+			System.out.println("There was an error connecting to Weapon Info");
+			e.printStackTrace();
+		}
+	
+	}
+	
+	public static void RetrieveArmourInfo() {
+		
+		try {
+			
+			Connection databaseConnection = DriverManager.getConnection(url, username, password);
+			
 			System.out.println("Please Enter The Amour You Want To Look Up");
 			Scanner armourScan = new Scanner(System.in);
 			String armourInput = (armourScan.nextLine());
 			String armoursql = "select * from armours where armours.armour_name = '" + armourInput + "';";
 			Statement armoursqlStatement = databaseConnection.createStatement();
-			//Executes the sql query 
-			ResultSet armourResultOutput = sqlStatement.executeQuery(armoursql);
+			
+			ResultSet armourResultOutput = armoursqlStatement.executeQuery(armoursql);
 			
 			while(armourResultOutput.next()) {
 				armourInfo = new Armours();
@@ -123,13 +140,29 @@ public class DatabaseConnection {
 				System.out.println(armourInfo);
 			}
 			
+			databaseConnection.close();
+			
+		}catch(SQLException e) {
+			
+			System.out.println("There was an error connecting to Armour Info");
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static void RetrievePotionInfo() {
+		
+		try {
+			
+			Connection databaseConnection = DriverManager.getConnection(url, username, password);
+			
 			System.out.println("Please Enter The Potion You Want To Look Up");
 			Scanner potionScan = new Scanner(System.in);
 			String potionInput = (potionScan.nextLine());
 			String potionsql = "select * from potions where potions.potion_name = '" + potionInput + "';";
 			Statement potionsqlStatement = databaseConnection.createStatement();
-			//Executes the sql query 
-			ResultSet potionResultOutput = sqlStatement.executeQuery(potionsql);
+			
+			ResultSet potionResultOutput = potionsqlStatement.executeQuery(potionsql);
 			
 			while(potionResultOutput.next()) {
 				potionInfo = new Potions();
@@ -143,15 +176,12 @@ public class DatabaseConnection {
 				System.out.println(potionInfo);
 			}
 			
-			
 			databaseConnection.close();
-			//databaseConnection1.close();
 			
-		}catch (SQLException e) {
-			// TODO Auto-generated catch block
+		}catch(SQLException e) {
+			System.out.println("There was an error connecting to Potion Info");
 			e.printStackTrace();
 		}
 		
 	}
-		
 }
