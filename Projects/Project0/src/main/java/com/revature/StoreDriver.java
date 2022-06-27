@@ -16,7 +16,8 @@ public class StoreDriver {
 		
 		case 1:
 			System.out.println("Welcome to Weapons");
-			DatabaseConnection.RetrieveWeaponInfo();
+			//DatabaseConnection.RetrieveWeaponInfo();
+			DatabaseConnection.MakeOffer();
 			break;
 		case 2:
 			System.out.println("Welcome to Armours");

@@ -122,3 +122,12 @@ select * from users where users.username = 'Jairus';
 update weapons set weapon_quantity = 5 where weapon_name = 'Dagger'; 
 
 select weapons.weapon_price from weapons where weapon_name = 'Dagger'; 
+
+insert into weapons (weapon_name, weapon_price ,weapon_quantity) values ('Dagger',2,10); 
+delete from weapons where id = 11; 
+
+update armours set armour_quantity = 15 where armour_name = 'Hide'; 
+
+select * from weapons; 
+
+select * from weapons where weapon_quantity  <= 10;

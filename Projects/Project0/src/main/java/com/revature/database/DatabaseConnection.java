@@ -190,11 +190,13 @@ public class DatabaseConnection {
 		try {
 			Connection databaseConnection = DriverManager.getConnection(url, username, password);
 			
+			//The manager or employees types in Weapons
 			if (ItemCategory.equals("Weapons")) {
-				
-				String updateSql = "update weapons set weapon_quantity = "+ ItemAmount +" where weapon_name = '" + ItemName + ";";
+				//This is the Sql statement ItemAmount should be 15 and the ItemName would be something like Greatsword
+				String updateSql = "update weapons set weapon_quantity = "+ ItemAmount +" where weapon_name = '" + ItemName + "';";
 				Statement updateSqlStatement = databaseConnection.createStatement();
 				
+				//Sql statement to ensure the quanitity changed
 				String checkUpdateSql = "select * from weapons where weapons.weapon_name = '" + ItemName + "';";
 				
 				ResultSet updateResultOutput = updateSqlStatement.executeQuery(checkUpdateSql);
@@ -213,7 +215,7 @@ public class DatabaseConnection {
 			
 			else if (ItemCategory.equals("Armours")) {
 				
-				String updateSql = "update armours set armour_quantity = "+ ItemAmount +" where armour_name = '" + ItemName + ";";
+				String updateSql = "update armours set armour_quantity = "+ ItemAmount +" where armour_name = '" + ItemName + "';";
 				Statement updateSqlStatement = databaseConnection.createStatement();
 				
 				String checkUpdateSql = "select * from armours where armours.armour_name = '" + ItemName + "';";
@@ -234,7 +236,7 @@ public class DatabaseConnection {
 			
 			else if (ItemCategory.equals("Potions")) {
 				
-				String updateSql = "update potions set potion_quantity = "+ ItemAmount +" where potion_name = '" + ItemName + ";";
+				String updateSql = "update potions set potion_quantity = "+ ItemAmount +" where potion_name = '" + ItemName + "';";
 				Statement updateSqlStatement = databaseConnection.createStatement();
 				
 				String checkUpdateSql = "select * from potions where potions.potion_name = '" + ItemName + "';";
@@ -262,7 +264,7 @@ public class DatabaseConnection {
 			databaseConnection.close();
 
 			
-		} catch (SQLException e) {
+		}catch (SQLException e) {
 			// TODO Auto-generated catch block
 			System.out.println("There was am error connecting to Update Store");
 			e.printStackTrace();
@@ -270,7 +272,41 @@ public class DatabaseConnection {
 		
 	}
 	
-	public static void MakeOffer(String ItemName) {
+	public static void MakeOffer() {
+		
+		try {
+			Connection databaseConnection = DriverManager.getConnection(url, username, password);
+			
+			System.out.println("What are you looking for/nWeappns, Armours, Potions");
+			Scanner userInput = new Scanner(System.in);
+			String userSelection = userInput.next();
+			
+			if (userSelection.equals("Weapons")) {
 				
+				String weaponSQL = "select * from weapons;";
+				
+				Statement weaponSqlStatement = databaseConnection.createStatement();
+				
+				ResultSet updateResultOutput = weaponSqlStatement.executeQuery(weaponSQL);
+				
+				while(updateResultOutput.next()) {
+					weaponInfo = new Weapons();
+					weaponInfo.setId(updateResultOutput.getInt("id"));
+					weaponInfo.setWeapon_name(updateResultOutput.getString("weapon_name")); 
+					weaponInfo.setWeapon_price(updateResultOutput.getInt("weapon_price"));
+					weaponInfo.setWeapon_quantity(updateResultOutput.getInt("weapon_quantity"));
+					
+					System.out.println(weaponInfo);
+				}
+				
+			}
+
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+
+		
 	}
 }
