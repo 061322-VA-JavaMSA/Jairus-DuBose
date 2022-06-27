@@ -184,4 +184,93 @@ public class DatabaseConnection {
 		}
 		
 	}
+	
+	public static void UpdateStore(String ItemCategory,String ItemName, int ItemAmount) {
+		
+		try {
+			Connection databaseConnection = DriverManager.getConnection(url, username, password);
+			
+			if (ItemCategory.equals("Weapons")) {
+				
+				String updateSql = "update weapons set weapon_quantity = "+ ItemAmount +" where weapon_name = '" + ItemName + ";";
+				Statement updateSqlStatement = databaseConnection.createStatement();
+				
+				String checkUpdateSql = "select * from weapons where weapons.weapon_name = '" + ItemName + "';";
+				
+				ResultSet updateResultOutput = updateSqlStatement.executeQuery(checkUpdateSql);
+				
+				while(updateResultOutput.next()) {
+					weaponInfo = new Weapons();
+					weaponInfo.setId(updateResultOutput.getInt("id"));
+					weaponInfo.setWeapon_name(updateResultOutput.getString("weapon_name")); 
+					weaponInfo.setWeapon_price(updateResultOutput.getInt("weapon_price"));
+					weaponInfo.setWeapon_quantity(updateResultOutput.getInt("weapon_quantity"));
+					
+					System.out.println(weaponInfo);
+				}	
+				
+			}
+			
+			else if (ItemCategory.equals("Armours")) {
+				
+				String updateSql = "update armours set armour_quantity = "+ ItemAmount +" where armour_name = '" + ItemName + ";";
+				Statement updateSqlStatement = databaseConnection.createStatement();
+				
+				String checkUpdateSql = "select * from armours where armours.armour_name = '" + ItemName + "';";
+				
+				ResultSet updateResultOutput = updateSqlStatement.executeQuery(checkUpdateSql);
+				
+				while(updateResultOutput.next()) {
+					armourInfo = new Armours();
+					armourInfo.setId(updateResultOutput.getInt("id"));
+					armourInfo.setArmour_name(updateResultOutput.getString("armour_name")); 
+					armourInfo.setArmour_price(updateResultOutput.getInt("armour_price"));
+					armourInfo.setArmour_quantity(updateResultOutput.getInt("armour_quantity"));
+					
+					System.out.println(armourInfo);
+				}
+				
+			}
+			
+			else if (ItemCategory.equals("Potions")) {
+				
+				String updateSql = "update potions set potion_quantity = "+ ItemAmount +" where potion_name = '" + ItemName + ";";
+				Statement updateSqlStatement = databaseConnection.createStatement();
+				
+				String checkUpdateSql = "select * from potions where potions.potion_name = '" + ItemName + "';";
+				
+				ResultSet updateResultOutput = updateSqlStatement.executeQuery(checkUpdateSql);
+				
+				while(updateResultOutput.next()) {
+					potionInfo = new Potions();
+					potionInfo.setId(updateResultOutput.getInt("id"));
+					potionInfo.setPotion_name(updateResultOutput.getString("potion_name")); 
+					potionInfo.setPotion_price(updateResultOutput.getInt("potion_price"));
+					potionInfo.setPotion_quantity(updateResultOutput.getInt("potion_quantity"));
+					
+					System.out.println(potionInfo);
+				}	
+				
+			}
+			
+			else {
+				
+				System.out.println("There was an error entering the category name");
+				
+			}
+			
+			databaseConnection.close();
+
+			
+		} catch (SQLException e) {
+			// TODO Auto-generated catch block
+			System.out.println("There was am error connecting to Update Store");
+			e.printStackTrace();
+		}
+		
+	}
+	
+	public static void MakeOffer(String ItemName) {
+				
+	}
 }

@@ -117,3 +117,8 @@ select potions.potion_name, potions.potion_price from potions where potions.poti
 select potions.potion_name, potions.potion_price from potions where potions.potion_name = 'Cold Resistance';  
 
 select * from users where users.id = 2; 
+select * from users where users.username = 'Jairus';
+
+update weapons set weapon_quantity = 5 where weapon_name = 'Dagger'; 
+
+select weapons.weapon_price from weapons where weapon_name = 'Dagger'; 

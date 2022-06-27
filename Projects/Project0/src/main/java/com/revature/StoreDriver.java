@@ -10,7 +10,7 @@ public class StoreDriver {
 	public static void OpeningStore() {
 		// TODO Auto-generated method stub
 
-		System.out.println("What can I get you?\n 1: Weapons 2: Armours 3: Potions");
+		System.out.println("What can I get you?\n 1: Weapons 2: Armours 3: Potions 4: Update Store");
 		int userSelection = userInput.nextInt();
 		switch(userSelection) {
 		
@@ -26,6 +26,9 @@ public class StoreDriver {
 			System.out.println("Welcome to Potions");
 			DatabaseConnection.RetrievePotionInfo();
 			break;
+		case 4:
+			UpdateStore(); 
+			break; 
 		default:
 			System.out.println("Invalid Input Please Try Again");
 		
@@ -35,6 +38,21 @@ public class StoreDriver {
 	public static void StoreTestMethod() {
 		
 		System.out.println("Testing the Store Driver"); 
+		
+	}
+	
+	public static void UpdateStore() {
+		
+		System.out.println("Please enter the Category you are updating\nWeapons, Armours, or Potions");
+		String itemCategory = userInput.next();
+		
+		System.out.println("Please enter the name of the item you are updating: ");
+		String itemName = userInput.next();
+		
+		System.out.println("Please enter the new amount");
+		int itemAmount = userInput.nextInt();
+		
+		DatabaseConnection.UpdateStore(itemCategory, itemName, itemAmount);
 		
 	}
 
