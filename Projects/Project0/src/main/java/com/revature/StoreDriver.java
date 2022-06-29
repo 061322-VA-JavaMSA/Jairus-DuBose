@@ -10,30 +10,41 @@ public class StoreDriver {
 	public static void OpeningStore() {
 		// TODO Auto-generated method stub
 
-		System.out.println("What can I get you?\n 1: Weapons 2: Armours 3: Potions 4: Update Store");
-		int userSelection = userInput.nextInt();
-		switch(userSelection) {
+		System.out.println("Welcome to the Store");
+		System.out.println("Press 1: Proceed to See Items, 2: To Exit");
+		int storeSelection = userInput.nextInt();
+		
+		switch(storeSelection) {
 		
 		case 1:
-			System.out.println("Welcome to Weapons");
-			//DatabaseConnection.RetrieveWeaponInfo();
+		
 			DatabaseConnection.MakeOffer();
 			break;
+			
 		case 2:
-			System.out.println("Welcome to Armours");
-			DatabaseConnection.RetrieveArmourInfo();
-			break; 
-		case 3:
-			System.out.println("Welcome to Potions");
-			DatabaseConnection.RetrievePotionInfo();
+			System.out.println("Existing Program. Thank you for visting");
 			break;
-		case 4:
-			UpdateStore(); 
-			break; 
-		default:
-			System.out.println("Invalid Input Please Try Again");
 		
 		}
+		
+		/*
+		 * System.out.
+		 * println("What can I get you?\n 1: Weapons 2: Armours 3: Potions 4: To Exit");
+		 * int userSelection = userInput.nextInt(); switch(userSelection) {
+		 * 
+		 * case 1: System.out.println("Welcome to Weapons");
+		 * //DatabaseConnection.RetrieveWeaponInfo(); DatabaseConnection.MakeOffer();
+		 * break; case 2: System.out.println("Welcome to Armours");
+		 * //DatabaseConnection.RetrieveArmourInfo(); DatabaseConnection.MakeOffer();
+		 * break; case 3: System.out.println("Welcome to Potions");
+		 * //DatabaseConnection.RetrievePotionInfo(); DatabaseConnection.MakeOffer();
+		 * break; case 4: System.out.println("Exiting to Customer Menu");
+		 * MenuDriver.CustomerMenu(); break; default:
+		 * System.out.println("Invalid Input Please Try Again");
+		 * MenuDriver.CustomerMenu();
+		 * 
+		 * }
+		 */
 	}
 	
 	public static void StoreTestMethod() {

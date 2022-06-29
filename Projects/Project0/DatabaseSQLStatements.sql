@@ -33,6 +33,18 @@ create table if not exists potions(
 
 );
 
+drop table if exists transactions;
+create table if not exists transactions(
+
+	id serial primary key,
+	item_purchased varchar(50) not null,
+	customer_name varchar(50) not null,
+	transaction_date Date not null,
+	transaction_amount integer not null, 
+	transaction_status varchar(50) not null
+
+);
+
 --Data I created
 insert into users (username, password, usertype) values ('Jairus', 'password', 'manager');
 insert into users (username, password, usertype) values ('Bob', 'password1', 'employee');
@@ -46,6 +58,28 @@ insert into users (username, password, usertype) values ('tkidds4', '6xr1dtb', '
 insert into users (username, password, usertype) values ('winkster5', 'I6oQFA8r2ar7', 'customer');
 insert into users (username, password, usertype) values ('fmeert6', 'ppVky07Zae', 'customer');
 insert into users (username, password, usertype) values ('byapp7', 'qkxL5P8U', 'customer');
+
+insert into users (username, password, usertype) values ('Barron', 'kgJgmPqNjz', 'customer');
+insert into users (username, password, usertype) values ('Adolphus', 'xwtkiS', 'customer');
+insert into users (username, password, usertype) values ('Sherilyn', 'ChIFYv2RvJCj', 'customer');
+insert into users (username, password, usertype) values ('Zara', 'ZY9qXd4Do', 'customer');
+insert into users (username, password, usertype) values ('Margaux', 'ePCaGgGkJPGx', 'customer');
+insert into users (username, password, usertype) values ('Benedikta', 'gFBDsJ', 'customer');
+insert into users (username, password, usertype) values ('Joshuah', 'IRIXqe', 'customer');
+insert into users (username, password, usertype) values ('Caty', 'UI5Zqhrp6izt', 'customer');
+insert into users (username, password, usertype) values ('Tawsha', 'opKOOkdIhD', 'customer');
+insert into users (username, password, usertype) values ('Tootsie', '1xqa0PmSNC', 'customer');
+
+insert into transactions (item_purchased, customer_name, transaction_date, transaction_amount, transaction_status) values ('Dagger', 'Barron', '2022-06-21 20:00:46', 2,'pending');
+insert into transactions (item_purchased, customer_name, transaction_date, transaction_amount, transaction_status) values ('Hide', 'Barron', '2022-04-06 12:53:52', 10,'pending');
+insert into transactions (item_purchased, customer_name, transaction_date, transaction_amount, transaction_status) values ('Healing', 'Caty', '2022-06-08 17:04:20', 150,'pending');
+insert into transactions (item_purchased, customer_name, transaction_date, transaction_amount, transaction_status) values ('Breastplate', 'Caty', '2022-04-28 14:23:50', 400,'pending');
+insert into transactions (item_purchased, customer_name, transaction_date, transaction_amount, transaction_status) values ('Shortbow', 'Joshuah', '2022-02-14 21:37:08', 25,'pending');
+insert into transactions (item_purchased, customer_name, transaction_date, transaction_amount, transaction_status) values ('Shield', 'Joshuah', '2022-05-26 15:19:41', 10,'accecpted');
+insert into transactions (item_purchased, customer_name, transaction_date, transaction_amount, transaction_status) values ('Studded Leather', 'Zara', '2022-03-11 20:51:00', 45,'accecpted');
+insert into transactions (item_purchased, customer_name, transaction_date, transaction_amount, transaction_status) values ('Invisibility', 'Zara', '2022-06-07 18:04:30', 500,'accecpted');
+insert into transactions (item_purchased, customer_name, transaction_date, transaction_amount, transaction_status) values ('Acid Resistance', 'Adolphus', '2022-05-15 05:56:41', 100,'accecpted');
+insert into transactions (item_purchased, customer_name, transaction_date, transaction_amount, transaction_status) values ('Fire Resistance', 'Adolphus', '2022-05-31 19:16:03', 200,'accecpted');
 
 --Data I created
 insert into weapons (weapon_name, weapon_price, weapon_quantity) values ('Dagger', 2, 10);
@@ -131,3 +165,13 @@ update armours set armour_quantity = 15 where armour_name = 'Hide';
 select * from weapons; 
 
 select * from weapons where weapon_quantity  <= 10;
+
+insert into users (username, password, usertype) values ('Test','TestPass','TestCustomer');
+
+select * from users where users.username = 'Jairus' and users.password = 'password'; 
+
+select * from transactions where transactions.transaction_status = 'pending';
+select * from transactions where transactions.transaction_status = 'accecpted';
+select * from transactions where transactions.customer_name  = 'Barron';
+
+update transactions set transaction_status = 'accepted' where id = 15;

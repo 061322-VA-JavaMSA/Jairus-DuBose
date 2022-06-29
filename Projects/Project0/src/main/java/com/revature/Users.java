@@ -23,13 +23,24 @@ public class Users  implements UsersInterface {
 	
 	public static void AccountLogin() {
 		
+		System.out.println("Welcome Back\nProceeding to Account Login");
 		DatabaseConnection.RetrieveUserInfo();
 		
 	}
 	
-	public void NewUserLogin(String userName, String userPassword) {
+	public static void UserCreation() {
 		
-		System.out.println("Welcome " + userName + " You are a customer");
+		System.out.println("Please Enter Your Username: ");
+		String newUsername = userInput.next();
+		
+		System.out.println("Please Enter A Password: ");
+		String newPassword = userInput.next();
+		
+		System.out.println("Please Enter A Usertype: ");
+		String newUserType = userInput.next(); 
+		
+		DatabaseConnection.newUserCreation(newUsername, newPassword, newUserType);
+		
 	}
 
 	public void userName() {
