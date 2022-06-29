@@ -113,6 +113,68 @@ public class MenuDriver {
 		}
 	} 
 	
+	public static void EmployeeMenu() {
+		System.out.println("Welcome to the Employee Menu");
+		System.out.println("What would you like to do?");
+		System.out.println("1: Update Store, 2: View Pending Transactions, 3: View Current Items , 4: Exit Program");
+		int userSelection = userInput.nextInt();
+
+		switch(userSelection) {
+		
+		case 1:
+			
+			System.out.println("Please Enter the Category of Item you are updating\nWeapons, Armours, Potions");
+			String itemCategory = userInput.next();
+			
+			System.out.println("Please Enter the Name of the Item you are updating\nExample: Dagger, Hide, or Healing");
+			String itemName = userInput.next();
+			
+			System.out.println("Please Enter the new Quantity of the Item you are updating\nExample: 10, 15, or 20");
+			int itemAmount = userInput.nextInt();
+			
+			System.out.println("Proceeding to Update Store Menu");
+			DatabaseConnection.UpdateStore(itemCategory, itemName, itemAmount);
+			
+			break;
+		case 2:
+			
+			System.out.println("Proceeding to Transaction Menu");
+			DatabaseConnection.ViewTransaction();
+			
+			break;
+		case 3:
+			
+			System.out.println("Proceeding to Current Item Menu");
+			System.out.println("Please Enter the Category of Items You are Looking For\nExample: Weapons, Armours, Potions");
+			String categorySelection = userInput.next();
+			
+			if(categorySelection.equals("Weapons")) {
+				System.out.println("Retrieving Weapons Info");
+				DatabaseConnection.RetrieveWeaponInfo();
+			}
+			else if(categorySelection.equals("Armours")) {
+				System.out.println("Retrieving Armours Info");
+				DatabaseConnection.RetrieveArmourInfo();
+				
+			}
+			else if(categorySelection.equals("Potions")) {
+				System.out.println("Retrieving Potions Info");
+				DatabaseConnection.RetrievePotionInfo();
+			}
+			
+			break;
+		case 4:
+			
+			System.out.println("Exiting Program\nThank you Again");
+			
+			break;
+		default:
+			System.out.println("Error Entering Data\nReturning to Employee Menu");
+			EmployeeMenu(); 
+		
+		}
+	}
+	
 	
 	public static void CustomerMenu() {
 		System.out.println("Welcome to the Customer Menu");

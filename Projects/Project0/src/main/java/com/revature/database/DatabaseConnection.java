@@ -33,8 +33,8 @@ public class DatabaseConnection {
 	private static Logger loginLog = LogManager.getLogger(DatabaseConnection.class);
 	
 	static String url = "jdbc:postgresql://default.c4f146kcs3yu.us-east-1.rds.amazonaws.com:5432/postgres";
-	static String username = "";
-	static String password = ""; 
+	static String username = "postgres";
+	static String password = "elephant"; 
 	
 	public static void testMethod() {
 		
@@ -107,7 +107,7 @@ public class DatabaseConnection {
 				
 				System.out.println("Here is your information: "+userInfo2);
 				
-				try {
+				//try {
 				
 				String userType = userInfo2.getUsertype(); 
 				if(userType.equals("manager")) {
@@ -116,10 +116,10 @@ public class DatabaseConnection {
 					MenuDriver.ManagerMenu();
 					
 				}
-				else if(userType.equals("empolyee")) {
+				else if(userType.equals("employee")) {
 					
 					System.out.println("Proceeding to Employee Menu");
-					
+					MenuDriver.EmployeeMenu();
 				}
 				else if(userType.equals("customer")) {
 					
@@ -128,19 +128,19 @@ public class DatabaseConnection {
 				}
 				else {
 					
-					throw new UserLoginException();
+					//throw new UserLoginException();
 					
-					/*
-					 * System.out.println("An Error has occured returning to Main Menu");
-					 * MenuDriver.welcomeMenu();
-					 */
+					
+					  System.out.println("An Error has occured returning to Main Menu");
+					  MenuDriver.welcomeMenu();
+					 
 					
 				}
 				
-				}catch(UserLoginException e) {
+				/*}catch(UserLoginException e) {
 					System.out.println("User not found");
 					loginLog.error("Login Exception was thrown"+ e.getMessage());
-				}
+				}*/
 			}
 			
 			databaseConnection.close();
@@ -327,8 +327,18 @@ public class DatabaseConnection {
 					System.out.println("The item was successfully updated: "+weaponInfo);
 				}
 				
-				System.out.println("Returning to Manager Menu");
-				MenuDriver.ManagerMenu();
+				System.out.println("Please enter your name: ");
+				Scanner nameInput = new Scanner(System.in);
+				String userInput = nameInput.next();
+				
+				if(userInput.equals("Jairus")) {
+					System.out.println("Returning to Manager Menu");
+					MenuDriver.ManagerMenu();
+				}
+				else {
+					System.out.println("Returning to Employee Menu");
+					MenuDriver.EmployeeMenu();
+				}
 				
 			}
 			
@@ -352,8 +362,18 @@ public class DatabaseConnection {
 					System.out.println("The item was successfully updated: "+armourInfo);
 				}
 				
-				System.out.println("Returning to Manager Menu");
-				MenuDriver.ManagerMenu();
+				System.out.println("Please enter your name: ");
+				Scanner nameInput = new Scanner(System.in);
+				String userInput = nameInput.next();
+				
+				if(userInput.equals("Jairus")) {
+					System.out.println("Returning to Manager Menu");
+					MenuDriver.ManagerMenu();
+				}
+				else {
+					System.out.println("Returning to Employee Menu");
+					MenuDriver.EmployeeMenu();
+				}
 				
 			}
 			
@@ -377,8 +397,18 @@ public class DatabaseConnection {
 					System.out.println("The Item was successfully updated: " + potionInfo);
 				}	
 				
-				System.out.println("Returning to Manager Menu");
-				MenuDriver.ManagerMenu();
+				System.out.println("Please enter your name: ");
+				Scanner nameInput = new Scanner(System.in);
+				String userInput = nameInput.next();
+				
+				if(userInput.equals("Jairus")) {
+					System.out.println("Returning to Manager Menu");
+					MenuDriver.ManagerMenu();
+				}
+				else {
+					System.out.println("Returning to Employee Menu");
+					MenuDriver.EmployeeMenu();
+				}
 			}
 			
 			else {
@@ -591,7 +621,7 @@ public class DatabaseConnection {
 		try {
 			Connection databaseConnection = DriverManager.getConnection(url, username, password);
 			
-			System.out.println("Press 1: Search using Transaction Status , 2: Search using Customer Name or 3: Return to Manager Menu");
+			System.out.println("Press 1: Search using Transaction Status , 2: Search using Customer Name or 3: Return to Previous Menu");
 			Scanner userInput = new Scanner(System.in);
 			int transactionSelection = userInput.nextInt();
 			
@@ -635,12 +665,32 @@ public class DatabaseConnection {
 						String updateTransactionSql = "update transactions set transaction_status = 'accepted' where id = '"+transactionId+"';";
 						Statement updateTransactionSQLStatement = databaseConnection.createStatement();
 						updateTransactionSQLStatement.executeUpdate(updateTransactionSql);
-						System.out.println("Transaction was Updated\nReturning to Manager Menu");
-						MenuDriver.ManagerMenu();
+						System.out.println("Please enter your name: ");
+						Scanner nameInput = new Scanner(System.in);
+						String userInput1 = nameInput.next();
+						
+						if(userInput1.equals("Jairus")) {
+							System.out.println("Returning to Manager Menu");
+							MenuDriver.ManagerMenu();
+						}
+						else {
+							System.out.println("Returning to Employee Menu");
+							MenuDriver.EmployeeMenu();
+						}
 					}
 					else if(YesNo.equals("No")) {
-						System.out.println("Returning to Manager Menu");
-						MenuDriver.ManagerMenu();
+						System.out.println("Please enter your name: ");
+						Scanner nameInput = new Scanner(System.in);
+						String userInput1 = nameInput.next();
+						
+						if(userInput1.equals("Jairus")) {
+							System.out.println("Returning to Manager Menu");
+							MenuDriver.ManagerMenu();
+						}
+						else {
+							System.out.println("Returning to Employee Menu");
+							MenuDriver.EmployeeMenu();
+						}
 					}
 					break;
 					
@@ -667,8 +717,18 @@ public class DatabaseConnection {
 					break;
 					
 					default:
-						System.out.println("There was an error with the transaction\nReturning to the Manager Menu");
-						MenuDriver.ManagerMenu();
+						System.out.println("Please enter your name: ");
+						Scanner nameInput = new Scanner(System.in);
+						String userInput1 = nameInput.next();
+						
+						if(userInput1.equals("Jairus")) {
+							System.out.println("Returning to Manager Menu");
+							MenuDriver.ManagerMenu();
+						}
+						else {
+							System.out.println("Returning to Employee Menu");
+							MenuDriver.EmployeeMenu();
+						}
 				}
 				break;
 			case 2:
@@ -696,16 +756,39 @@ public class DatabaseConnection {
 					System.out.println("Here are your transaction infomation: "+transactionInfo);
 				}
 				
+				System.out.println("Please enter your name: ");
+				Scanner nameInput = new Scanner(System.in);
+				String userInput1 = nameInput.next();
+				
+				if(userInput1.equals("Jairus")) {
+					System.out.println("Returning to Manager Menu");
+					MenuDriver.ManagerMenu();
+				}
+				else {
+					System.out.println("Returning to Employee Menu");
+					MenuDriver.EmployeeMenu();
+				}
+				
 				break;
 				
 			case 3:
-				System.out.println("Returning to the Manager Menu");
-				MenuDriver.ManagerMenu();
+				System.out.println("Please enter your name: ");
+				Scanner nameInput1 = new Scanner(System.in);
+				String userInput11 = nameInput1.next();
+				
+				if(userInput11.equals("Jairus")) {
+					System.out.println("Returning to Manager Menu");
+					MenuDriver.ManagerMenu();
+				}
+				else {
+					System.out.println("Returning to Employee Menu");
+					MenuDriver.EmployeeMenu();
+				}
 				break;
 				
 			default:
-				System.out.println("There was an error view the the transaction\nReturning to Manager Menu");
-				MenuDriver.ManagerMenu();
+				System.out.println("There was an error view the the transaction\nPlease Try Again");
+				ViewTransaction(); 
 			}			
 			
 			
