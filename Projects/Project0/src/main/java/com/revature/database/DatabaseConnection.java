@@ -33,8 +33,8 @@ public class DatabaseConnection {
 	private static Logger loginLog = LogManager.getLogger(DatabaseConnection.class);
 	
 	static String url = "jdbc:postgresql://default.c4f146kcs3yu.us-east-1.rds.amazonaws.com:5432/postgres";
-	static String username = "postgres";
-	static String password = "elephant"; 
+	static String username = "";
+	static String password = ""; 
 	
 	public static void testMethod() {
 		
