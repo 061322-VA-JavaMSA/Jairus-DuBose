@@ -31,8 +31,9 @@ class ManagerLoginTest {
 	void tearDown() throws Exception {
 	}
 
+	//Test to Login
 	@Test
-	void Logniintest() {
+	void Lognintest() {
 		
 		//String username = "Jairus";
 		//String password = "password";
@@ -50,10 +51,18 @@ class ManagerLoginTest {
 		
 	}
 	
+	//Test for new user creation 
 	@Test
-	void Test() {
+	void newUserTest() {
 		
-		sut.newUserCreation("Junit", "Test", "Customer");
+		sut.newUserCreation("Junit2", "Test2", "customer");
+	}
+	
+	@Test
+	void makeOfferTest() {
+		
+		sut.MakeOffer();
+		
 	}
 
 }
