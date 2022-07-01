@@ -484,6 +484,7 @@ public class DatabaseConnection {
 					
 					if (offer < weaponPrice) {
 						System.out.println("Not enough gold\nPlease try again");
+						MenuDriver.CustomerMenu();
 					}
 					else {
 						System.out.println("Offer is accepted");

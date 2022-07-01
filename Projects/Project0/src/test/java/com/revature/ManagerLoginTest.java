@@ -32,37 +32,40 @@ class ManagerLoginTest {
 	}
 
 	//Test to Login
-	@Test
-	void Lognintest() {
-		
-		//String username = "Jairus";
-		//String password = "password";
-		
-		sut.RetrieveUserInfo();
-		
-		//String result = "Proceeding to Manager Menu"; 
-		//fail("Not yet implemented");
-	}
+	/*
+	 * @Test void Lognintest() {
+	 * 
+	 * //String username = "Jairus"; //String password = "password";
+	 * 
+	 * sut.RetrieveUserInfo();
+	 * 
+	 * //String result = "Proceeding to Manager Menu";
+	 * //fail("Not yet implemented"); }
+	 */
 	
-	@Test
-	void transactionTest() {
-		
-		sut.ViewTransaction();
-		
-	}
-	
+	/*
+	 * @Test void transactionTest() {
+	 * 
+	 * sut.ViewTransaction();
+	 * 
+	 * }
+	 */
 	//Test for new user creation 
 	@Test
 	void newUserTest() {
+		String ExampleName = "Example";
+		String ExamplePass = "ExamplePass";
+		String Type = "customer"; 
 		
-		sut.newUserCreation("Junit2", "Test2", "customer");
+		sut.newUserCreation(ExampleName, ExamplePass, Type);
 	}
 	
-	@Test
-	void makeOfferTest() {
-		
-		sut.MakeOffer();
-		
-	}
+	/*
+	 * @Test void makeOfferTest() {
+	 * 
+	 * sut.MakeOffer();
+	 * 
+	 * }
+	 */
 
 }
