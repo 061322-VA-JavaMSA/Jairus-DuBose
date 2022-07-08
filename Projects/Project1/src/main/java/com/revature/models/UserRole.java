@@ -1,6 +1,6 @@
 package com.revature.models;
 
-public class UserRole {
+public enum UserRole {
 
 	EMPLOYEE, MANAGER
 	
