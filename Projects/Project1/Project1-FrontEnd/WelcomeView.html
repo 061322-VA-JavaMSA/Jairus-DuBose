@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+
+<html>
+    
+<head>
+    <title> ACME Financial Reimburstment </title>
+</head>
+
+<style>
+
+header {
+  background-color: rgb(38, 202, 57);
+  padding: 30px;
+  text-align: center;
+  font-size: 35px;
+  color: white;
+}
+
+footer {
+  background-color: rgb(38, 202, 57);
+  padding: 10px;
+  text-align: center;
+  color: white;
+}
+
+/* Navbar Style */ 
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+  background-color: gainsboro;
+}
+
+li {
+  float: left;
+}
+
+li a{
+  display: block; 
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
+/*.companyDesc{
+  background-color: rgb(38, 202, 57);
+  text-align: left;
+  color: white;
+  
+}*/
+
+/* Setting up colmns */
+.column1{
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.column2{
+  float: left;
+  width: 50%;
+  padding: 10px;
+}
+
+.row:after{
+  content: "";
+  display: table;
+  clear: both;
+}
+
+.cover {
+  display: -webkit-flex;
+  display: -moz-flex;
+  display: -ms-flex;
+  display: -o-flex;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.item {
+  height: 500px;
+}
+
+.item1 {
+  width: 50%;
+}
+
+.item2 {
+  background-color: red;
+}
+
+.item.item3 {
+  width: 50%;
+  background-color: rgb(38, 202, 57);
+}
+
+</style>
+
+<header>ACME Financial Reimburstment</header>
+
+<body>
+
+    <ul>
+      <li><a class="active" href="#Login">Login</a></li>  
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+    </ul>
+
+
+<!--     <div class="row">
+      <div class="column1">
+        <h2>Pictures Here</h2>
+        <p>Random picture goes company here</p>
+      </div>
+      <div class="column2" style="background-color: green;">
+        <h2>Company Story</h2>
+        <p>Random story of a company goes here</p>
+      </div>
+    </div> -->
+
+    <div class="cover">
+      <div class="item item1">
+        
+        <img src="C:\Users\dubos\Jairus-DuBose\Projects\Project1\Project1-FrontEnd\images\Bank Image.jpg" style="width:625px;height:510px;">
+
+
+      </div>
+ 
+      <div class="item item3">
+
+        <h2>Company Story</h2>
+        <p>Random story of a company goes here</p>
+
+      </div>
+    </div>
+    
+</body>
+
+<div>
+<footer>By: Jairus Ezra DuBose</footer>
+</div>
+</html>
