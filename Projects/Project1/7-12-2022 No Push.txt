@@ -1,0 +1,8 @@
+This is a text file to explain why I didn't push tonight. 
+
+I am having trouble with my servlet 
+
+I plan to ask the group about it tomorrow
+
+Its looking like that I wont have this project done on time but I'll try to have something to show Friday
+
