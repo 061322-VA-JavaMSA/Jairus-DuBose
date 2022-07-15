@@ -21,10 +21,44 @@
             color: white;
         }
 
+        ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  text-align: center;
+  overflow: hidden;
+  background-color: gainsboro;
+}
+
+li {
+  float: left;
+}
+
+li a{
+  display: block; 
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #04AA6D;
+}
+
     </style>
     <header>ACME Financial Reimburstment Login</header>
 
     <body>
+        <ul>
+            <li><a class="active" href="#Login">Login</a></li>  
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+          </ul>
         <main class="container-fluid mx-auto " style="padding: 0 7.5em;">
             <div class="container align-content-center" id="loginForm">
                 <form style="padding-top: 2.5em;">

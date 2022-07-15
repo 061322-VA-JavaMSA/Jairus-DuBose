@@ -7,6 +7,22 @@
     </head>
 
     <style>
+
+header {
+            background-color: rgb(38, 202, 57);
+            padding: 30px;
+            text-align: center;
+            font-size: 35px;
+            color: white;
+        }
+
+        footer {
+            background-color: rgb(38, 202, 57);
+            padding: 10px;
+            text-align: center;
+            color: white;
+        }
+
         ul {
   list-style-type: none;
   margin: 0;
@@ -35,17 +51,32 @@ li a:hover:not(.active) {
 .active {
   background-color: #04AA6D;
 }
-    </style>
 
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+    </style>
+<header>Manager Page</header>
     <body>
-        <ul>
-            <li><a href="#home">Home</a></li>  
+        <ul> 
             <li><a href="#viewReimburstment">View Current Reimburstments</a></li>
             <li><a href="#viewClosedReimburstment">View Closed Reimburstments</a></li>
             <li><a class="active" href="#logout">Log Out</a></li>
           </ul>
-    <p>Test Table Gows Below</p>
-    <table class="table table-hover">
+    <p>Reimburstment Table</p>
+    <!-- <table class="table table-hover">
         <thead>
             <tr>
                 <th scope="col">id</th>
@@ -55,6 +86,51 @@ li a:hover:not(.active) {
         </thead>
         <tbody id="users-tbody">
         </tbody>
+    </table> -->
+
+    <table>
+      <tr>
+        <th>Amount</th>
+        <th>Date Submitted</th>
+        <th>Date Resolved</th>
+        <th>Description</th>
+        <th>Receipt</th>
+        <th>Employee</th>
+        <th>Status</th>
+        <th>Reimburstment Type</th>
+      </tr>
+      <tr>
+        <td>50</td>
+        <td>2022-06-11 12:00:05</td>
+        <td>2022-06-18 13:30:05</td>
+        <td>Hotel Stay</td>
+        <td><a href="url">Click for Image</a></td>
+        <td>Bob Smith</td>
+        <td>Approved</td>
+        <td>Lodging</td>
+      </tr>
+      <tr>
+        <td>25</td>
+        <td>2022-07-06 15:45:15</td>
+        <td>2022-07-07 10:30:05</td>
+        <td>Gas</td>
+        <td><a href="url">Click for Image</a></td>
+        <td>James Cooper</td>
+        <td>Denied</td>
+        <td>Other</td>
+      </tr>
+      <tr>
+        <td>75</td>
+        <td>2022-07-07 10:45:05</td>
+        <td>Pending</td>
+        <td>Business Dinner</td>
+        <td><a href="url">Click for Image</a></td>
+        <td>Bob Smith</td>
+        <td>Pending</td>
+        <td>Food</td>
+      </tr>
     </table>
+
   </body>
+  <footer>By Jairus DuBose</footer>
 </html>
